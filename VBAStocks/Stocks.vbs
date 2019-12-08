@@ -4,7 +4,10 @@ Sub Stocks():
     Dim totalStockVolume As Integer
     total = 0
     totalStockVolume = 2
-    For i = 2 To 80000
+    
+    lastRow = Cells(Rows.Count, 1).End(xlUp).Row
+    
+    For i = 2 To lastRow
         If (Cells(i + 1, 1).Value <> Cells(i, 1).Value) Then
             ticker = Cells(i, 1).Value
             total = total + Cells(i, 7).Value
